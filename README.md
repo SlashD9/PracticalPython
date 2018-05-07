@@ -1,5 +1,8 @@
 # IRiddle app
-This is the IRiddle app.
+This is the IRiddle app. 
+
+The Idea of the IRiddle game is to display riddles and ask the user to enter their guess as to the answer of the riddle. 
+The user will receive points for every question answered and the high scorers will be displayed on the scores page.
 
 ## Wireframing
 This was created using the Adobe XD Program.
