@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 body {
   margin: 0;
+  background-image: url("/static/img/backdrop.jpeg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 nav {
@@ -23,7 +26,7 @@ nav {
 
 .logo {
   grid-column: 3;
-  background-image: url("https://www.riddles.com/img/riddles-logo-main.svg");
+  background-image: url("/static/img/logo.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
