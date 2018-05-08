@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+body {
+  margin: 0;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1em;
+  align-items: center;
+  text-align: center;
+  background: #5d5d5d;
+}
+
+@media screen and (max-width: 900px) {
+  nav {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-gap: 1em;
+ }
+}  
+
+.logo {
+  grid-column: 3;
+  background-image: url("https://www.riddles.com/img/riddles-logo-main.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 10vh;
+}
+
+.1 {
+  grid-column: 1;
+}
+
+.2 {
+  grid-column: 2;
+}
+
+.3 {
+  grid-column: 3;
+}
+
+.4 {
+  grid-column: 4;
+}
+
+.3 {
+  grid-column: 5;
+}
+
+.4 {
+  grid-column: 6;
+}
+
+.navLinks {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+.navLinks:hover {
+  color: white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  padding: 1em 1em;
+}
+
+#twist {
+  color: blue;
+}

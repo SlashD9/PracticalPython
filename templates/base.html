@@ -2,16 +2,31 @@
 
 <head>
     <title>IRiddle</title>
+    <link href="{{ url_for('static', filename='css/base.css') }}" rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('game') }}">Game</a></li>
-            <li><a href="{{ url_for('about') }}">About</a></li>
-        </ul>
-    </nav>
+    
+    <header>
+      <nav class="container">
+        <div class="1">
+            <div class="logo">
+            </div>
+        </div>
+        <div class="2">
+            <a href="#" class="navLinks"></a>
+        </div>
+        <div class="3">
+            <a class="navLinks" href="{{ url_for('index') }}">Home</a>
+        </div>
+        
+        <div class="4">
+            <a class="navLinks" href="{{ url_for('about') }}">About</a>
+        </div>
+        
+      </nav>
+    </header>
+    
 
     {% block content %} {% endblock %}
 </body>
