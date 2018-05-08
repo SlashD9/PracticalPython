@@ -1,6 +1,6 @@
 
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, request
 
 app = Flask(__name__)
 
@@ -15,8 +15,11 @@ def about():
     return render_template("/about.html")
 
 
-@app.route('/game')
+@app.route('/game/', methods=['GET', 'POST'])
 def game():
+    if request.method == 'POST':
+        print(request.form)
+        
     return render_template("/game.html")
     
 if __name__ == '__main__':
