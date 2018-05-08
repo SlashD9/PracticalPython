@@ -1,4 +1,18 @@
 
 {% extends 'base.html' %} {% block content %}
-<h1>Home Page</h1>
+<div class="main"> 
+    <h1>IRiddle</h1>
+    <p>Welcome to IRiddle, where we give you the riddles and you try and guess the answers and win some Points.
+    <br>
+    <br>
+    Whats stopping you?
+    <br>
+    <br>
+    Press Play Now !</p>
+    <br>
+    <br>
+    <button type="button" onclick="window.location.href='{{ url_for( 'game' ) }}';">PLAY</button>
+    <button type="button" onclick="window.location.href='{{ url_for( 'about' ) }}';">LEARN MORE</button>
+</div>
+
 {% endblock %}
