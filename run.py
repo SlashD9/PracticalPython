@@ -1,6 +1,6 @@
 
 import os
-from flask import Flask, redirect, render_template, request
+from flask import Flask, redirect, render_template, request, url_for
 
 app = Flask(__name__)
 # Setting some Global variables
@@ -51,13 +51,16 @@ def game():
         return redirect(request.form["username"])
     return render_template("/game.html")
     
-@app.route('/<username>/', methods=['GET', 'POST'])
-def question(username):
-    if request.method == 'POST':
-        print(request.form)
+@app.route('/<username>/<num>', methods=['GET', 'POST'])
+def question(username, num):
+    num = num
     
-    question = get_question(0)
-    answer = get_answer(0)
+    if request.method == 'POST':
+        write_to_file("text/guess.txt", request.form["answer"] + "\n")
+        return redirect(url_for("question", username = username, num = num))
+        
+    question = get_question(num)
+    answer = get_answer(num)
     return render_template("/question.html", username=username, question=question, answer=answer)
     
 if __name__ == '__main__':
