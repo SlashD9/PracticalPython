@@ -89,7 +89,7 @@ def question(username, num, score):
                 number = number + 1
             else:
                 write_to_file("text/score.txt", str(score) + " Points  -  Username: " + username + "\n")
-                return render_template("/score.html")
+                return redirect(url_for("score"))
         else:
             score = score - 3
             
