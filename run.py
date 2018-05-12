@@ -73,6 +73,8 @@ def question(username, num):
                 number = number + 1
             else:
                 return render_template("/index.html")
+        else:
+            score = score -3
         
             
         return redirect(url_for("question", username = username, num = number))
