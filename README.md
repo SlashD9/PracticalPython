@@ -17,3 +17,6 @@ The App consist of 4 major pages:
 * About page (about.html)
 * Game page (game.html)
 * Score page (scores.html)
+
+## Questions and Answers
+Most of the riddles I have used in this app are from riddlers.org.
