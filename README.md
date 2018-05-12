@@ -31,14 +31,14 @@ them to the main run.py.
 ### Python
 
 All Testing has been carried out in the same sequence:
-    1. Add tests
-    2. Run tests (They fail, no function)
-    3. Create the function to enable tests to pass
-    4. Run tests (They passed)
-    5. Change the parameters of the tests to make them fail
-    6. Run tests (They fail)
-    7. Change the parameters to original
-    8. Run tests (They passed)
+1. Add tests
+2. Run tests (They fail, no function)
+3. Create the function to enable tests to pass
+4. Run tests (They passed)
+5. Change the parameters of the tests to make them fail
+6. Run tests (They fail)
+7. Change the parameters to original
+8. Run tests (They passed)
 
 #### Sandbox
 1. Function 1: get_question()
