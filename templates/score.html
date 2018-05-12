@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %}
+<div class='main'>
+    <h1>Top Scores</h1>
+    {% for score in scores %}
+    <li class="list-group-item">
+        <p>{{ score }}</p>
+    </li>
+    {% endfor %}
+</div>
+
+{% endblock %}

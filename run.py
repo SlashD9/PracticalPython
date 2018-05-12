@@ -8,7 +8,9 @@ qs = int
 line_question = ""
 ans = int
 line_answer = ""
-new_score = 0
+scores = list()
+
+
 
 def write_to_file(filename, data):
     """Handle the process of writing data to a file"""
@@ -33,6 +35,14 @@ def get_answer(ans):
             return (line_answer)
     f.close()
     
+def get_scores():
+    scores = list()
+    with open('./text/score.txt') as f:
+        for i in f:
+            scores.append(i.strip())
+        scores.sort(reverse=True)
+    return scores
+        
 
 @app.route('/')
 def index():
@@ -42,6 +52,11 @@ def index():
 @app.route('/about')
 def about():
     return render_template("/about.html")
+    
+@app.route('/score')
+def score():
+    scores = get_scores()
+    return render_template("/score.html", scores = scores)
 
 
 @app.route('/game/', methods=['GET', 'POST'])
@@ -68,14 +83,13 @@ def question(username, num, score):
         guess = request.form["answer"]
         guess = guess.lower()
         
-        
         if guess == answer:
             score = score + 10
             if number < 19:
                 number = number + 1
             else:
-                write_to_file("text/score.txt", str(score) + " Points, Username: " + username + "\n")
-                return render_template("/index.html")
+                write_to_file("text/score.txt", str(score) + " Points  -  Username: " + username + "\n")
+                return render_template("/score.html")
         else:
             score = score - 3
             
