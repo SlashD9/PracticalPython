@@ -44,23 +44,25 @@ def about():
 @app.route('/game/', methods=['GET', 'POST'])
 def game():
     """Main page with instructions"""
-    
+    num = 0
     # Handle POST request
     if request.method == "POST":
         write_to_file("text/users.txt", request.form["username"] + "\n")
         return redirect(request.form["username"])
     return render_template("/game.html")
     
-@app.route('/<username>/<num>', methods=['GET', 'POST'])
+@app.route('/<username>/<num>/', methods=['GET', 'POST'])
 def question(username, num):
-    num = num
+    number = int(num)
     
     if request.method == 'POST':
         write_to_file("text/guess.txt", request.form["answer"] + "\n")
-        return redirect(url_for("question", username = username, num = num))
+        number = number + 1
+        return redirect(url_for("question", username = username, num = number))
         
-    question = get_question(num)
-    answer = get_answer(num)
+        
+    question = get_question(number)
+    answer = get_answer(number)
     return render_template("/question.html", username=username, question=question, answer=answer)
     
 if __name__ == '__main__':
