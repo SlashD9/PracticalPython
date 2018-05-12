@@ -19,4 +19,4 @@ The App consist of 4 major pages:
 * Score page (scores.html)
 
 ## Questions and Answers
-Most of the riddles I have used in this app are from riddlers.org.
+Most of the riddles I have used in this app are from riddlers.org
