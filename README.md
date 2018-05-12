@@ -46,3 +46,11 @@ All Testing has been carried out in the same sequence:
 
 2. Function 2: get_answer()
     * This function returns a line (answer) based on the number given as an argument to the function.
+
+
+### Run.py
+* I have copied functions from sandbox.py and tested in the run.py file
+* I have made adjustments to the get_answer and get_question functions and then placed them back into the sandbox.py for testing
+* To allow the progression of the questions and the adding of the points I have added more arguments to the question route
+* This has been tested and all values increase as they should
+* 
