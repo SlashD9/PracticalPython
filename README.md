@@ -1,5 +1,6 @@
 # IRiddle app
-[logo]: https://github.com/SlashD9/PracticalPython/blob/master/Wireframe-XD/Home.jpg?raw=true "IRiddle"
+![alt text](https://github.com/SlashD9/PracticalPython/blob/master/Wireframe-XD/Home.jpg?raw=true "IRiddle")
+
 This is the IRiddle app.
 
 The Idea of the IRiddle game is to display riddles and ask the user to enter their guess as to the answer of the riddle.
