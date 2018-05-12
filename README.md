@@ -26,5 +26,5 @@ Most of the riddles I have used in this app are from riddlers.org
 # Python
 
 * Sandbox
-** Function: get_question()
-*** This function returns a line (question) based on the number given.
+1 Function: get_question()
+* This function returns a line (question) based on the number given.
