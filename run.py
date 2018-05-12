@@ -74,7 +74,7 @@ def question(username, num, score):
             if number < 19:
                 number = number + 1
             else:
-                write_to_file("text/score.txt", "Username: " + username + ". Score: " + str(score) + "\n")
+                write_to_file("text/score.txt", str(score) + " Points, Username: " + username + "\n")
                 return render_template("/index.html")
         else:
             score = score - 3
