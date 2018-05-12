@@ -48,7 +48,7 @@ def game():
     # Handle POST request
     if request.method == "POST":
         write_to_file("text/users.txt", request.form["username"] + "\n")
-        return redirect(request.form["username"])
+        return redirect(url_for("question", username = request.form["username"], num = num))
     return render_template("/game.html")
     
 @app.route('/<username>/<num>/', methods=['GET', 'POST'])
