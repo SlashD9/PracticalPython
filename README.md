@@ -23,8 +23,8 @@ Most of the riddles I have used in this app are from riddlers.org
 
 ## Testing
 
-# Python
+### Python
 
-* Sandbox
-1 Function: get_question()
+#### Sandbox
+1. Function 1: get_question()
     * This function returns a line (question) based on the number given.
