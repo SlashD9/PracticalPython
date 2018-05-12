@@ -37,7 +37,7 @@ body {
   .nav {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    grid-rows: 3;
+    grid-row: 3;
     grid-gap: 1em;
     padding-bottom: 20px;
     margin-bottom: 1em
