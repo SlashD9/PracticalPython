@@ -23,8 +23,26 @@ Most of the riddles I have used in this app are from riddlers.org
 
 ## Testing
 
+For creating functions I have decided to create a Sandbox.py file. This allows 
+me to test the functions outside the main run.py file.
+By seperating them I can confirm that on their own they are working before adding 
+them to the main run.py.
+
 ### Python
+
+All Testing has been carried out in the same sequence:
+    1. Add tests
+    2. Run tests (They fail, no function)
+    3. Create the function to enable tests to pass
+    4. Run tests (They passed)
+    5. Change the parameters of the tests to make them fail
+    6. Run tests (They fail)
+    7. Change the parameters to original
+    8. Run tests (They passed)
 
 #### Sandbox
 1. Function 1: get_question()
-    * This function returns a line (question) based on the number given.
+    * This function returns a line (question) based on the number given as an argument to the function.
+
+2. Function 2: get_answer()
+    * This function returns a line (answer) based on the number given as an argument to the function.
