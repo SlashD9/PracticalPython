@@ -22,6 +22,8 @@ def game():
         
     return render_template("/game.html")
     
+@app.route('/game/<user>/<questions>/<number>')
+    
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
