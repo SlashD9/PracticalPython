@@ -1,4 +1,5 @@
 # IRiddle app
+[logo]: https://github.com/SlashD9/PracticalPython/blob/master/Wireframe-XD/Home.jpg?raw=true "IRiddle"
 This is the IRiddle app.
 
 The Idea of the IRiddle game is to display riddles and ask the user to enter their guess as to the answer of the riddle.
@@ -53,4 +54,3 @@ All Testing has been carried out in the same sequence:
 * I have made adjustments to the get_answer and get_question functions and then placed them back into the sandbox.py for testing
 * To allow the progression of the questions and the adding of the points I have added more arguments to the question route
 * This has been tested and all values increase as they should
-* 
