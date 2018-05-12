@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+<div class='main'>
+    <h1>Questions</h1>  
+    <form method="POST">
+        <p>Question goes here....</p>
+        <label for='username'>Please enter your answer...</label> <br><br>
+        <input type="text" id='answer' name='answer'/><br><br>
+        <button type='submit'>Submit</button>
+    </form>
+</div>
+
+{% endblock %}

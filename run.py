@@ -22,6 +22,13 @@ def game():
         
     return render_template("/game.html")
     
+@app.route('/game/question/', methods=['GET', 'POST'])
+def answer():
+    if request.method == 'POST':
+        print(request.form)
+        
+    return render_template("/question.html")
+    
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
