@@ -8,6 +8,7 @@ qs = int
 line_question = ""
 ans = int
 line_answer = ""
+new_score = 0
 
 def write_to_file(filename, data):
     """Handle the process of writing data to a file"""
@@ -31,7 +32,7 @@ def get_answer(ans):
             line_answer = line_answer.replace("\n", "")
             return (line_answer)
     f.close()
-
+    
 
 @app.route('/')
 def index():
@@ -47,37 +48,38 @@ def about():
 def game():
     """Main page with instructions"""
     num = 0
+    score = 0
     # Handle POST request
     if request.method == "POST":
-        write_to_file("text/users.txt", request.form["username"] + "\n")
-        return redirect(url_for("question", username = request.form["username"], num = num))
+        write_to_file("text/users.txt", request.form["username"].title() + "\n")
+        return redirect(url_for("question", username = request.form["username"].title(), num = num, score = score ))
     return render_template("/game.html")
     
-@app.route('/<username>/<num>/', methods=['GET', 'POST'])
-def question(username, num):
+@app.route('/<username>/<num>/<score>', methods=['GET', 'POST'])
+def question(username, num, score):
     number = int(num)
     question = get_question(number)
     answer = get_answer(number)
-    score = 0
+    score = int(score)
+        
     
     if request.method == 'POST':
         write_to_file("text/guess.txt", request.form["answer"] + "\n")
         guess = request.form["answer"]
-        print(guess)
-        print(answer)
+        guess = guess.lower()
+        
         
         if guess == answer:
             score = score + 10
-            print(score)
             if number < 19:
                 number = number + 1
             else:
+                write_to_file("text/score.txt", "Username: " + username + ". Score: " + str(score) + "\n")
                 return render_template("/index.html")
         else:
-            score = score -3
-        
+            score = score - 3
             
-        return redirect(url_for("question", username = username, num = number))
+        return redirect(url_for("question", username = username, num = number, score = score))
     
     return render_template("/question.html", username=username, question=question, answer=answer)
     
