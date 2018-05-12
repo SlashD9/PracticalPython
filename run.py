@@ -1,6 +1,6 @@
 
 import os
-from flask import Flask, render_template, redirect, request
+from flask import Flask, redirect, render_template, request
 
 app = Flask(__name__)
 # Setting some Global variables
@@ -8,6 +8,11 @@ qs = int
 line_question = ""
 ans = int
 line_answer = ""
+
+def write_to_file(filename, data):
+    """Handle the process of writing data to a file"""
+    with open(filename, "a") as file:
+        file.writelines(data)
 
 # This functions gets the question based on then paramenter provided
 def get_question(qs):
@@ -38,17 +43,22 @@ def about():
 
 @app.route('/game/', methods=['GET', 'POST'])
 def game():
-    if request.method == 'POST':
-        print(request.form)
-        
+    """Main page with instructions"""
+    
+    # Handle POST request
+    if request.method == "POST":
+        write_to_file("text/users.txt", request.form["username"] + "\n")
+        return redirect(request.form["username"])
     return render_template("/game.html")
     
-@app.route('/game/question/', methods=['GET', 'POST'])
-def answer():
+@app.route('/<username>/', methods=['GET', 'POST'])
+def question(username):
     if request.method == 'POST':
         print(request.form)
-        
-    return render_template("/question.html")
+    
+    question = get_question(0)
+    answer = get_answer(0)
+    return render_template("/question.html", username=username, question=question, answer=answer)
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
