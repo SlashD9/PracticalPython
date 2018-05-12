@@ -9,6 +9,7 @@ def get_question(qs):
     f = open('./text/question.txt')
     for x, line_question in enumerate(f):
         if x == qs:
+            line_question = line_question.replace("\n", "")
             return (line_question)
     f.close()
 
@@ -17,6 +18,7 @@ def get_answer(ans):
     f = open('./text/answer.txt')
     for x, line_answer in enumerate(f):
         if x == ans:
+            line_answer = line_answer.replace("\n", "")
             return (line_answer)
     f.close()
 
