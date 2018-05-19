@@ -1,61 +1,21 @@
 from sandbox import *
 
 # Tests for get_question
-# Testing questions are the same
+assert get_question(0) != None, 'First question should not be empty, chaeck question.txt file'
+assert get_question(19) != None, 'Last question should not be empty, chaeck question.txt file'
+assert get_question(20) == None, 'Question should not exist, check question.txt file'
+assert get_question(0) == '1) The Rich Want It. The Poor Need It. The Wise Know It.', "This should return : {0}".format('The Rich Want It....')
+assert get_question(1) != '1) The Rich Want It. The Poor Need It. The Wise Know It.', "This should not return : {0}".format('The Rich Want It....')
+assert get_question(8) == '9) What do you call a robber with a list?', "This should return : {0}".format('What do you call a robber with a list?')
 
-qs1 = get_question(0)
-qs2 = get_question(1)
+#Tests for get_answer
+assert get_answer(0) != None, 'First question should not be empty, chaeck question.txt file'
+assert get_answer(19) != None, 'Last question should not be empty, chaeck question.txt file'
+assert get_answer(20) == None, 'Question should not exist, check question.txt file'
+assert get_answer(0) == 'love' , "This should return : {0}".format('love')
+assert get_answer(1) != 'love' , "Should not return : {0}".format('love')
+assert get_answer(4) == 'breathe' , "This should return : {0}".format('breathe')
 
-# Question 1
-if get_question(0) == qs1:
-    print('Test Question 1: Passed')
-else:
-    print('Test Question 1: Failed')
-    print(qs1 + " \"Does not match\" ")
-
-# Question 2
-if get_question(1) == qs2:
-    print('Test Question 2: Passed')
-else:
-    print('Test Question 2: Failed')
-    print(qs1 + " \"Does not match\" ")
-    
-
-# Testing question is NOT the same
-# Question3
-if get_question(0) != qs2:
-    print('Test Question 3: Passed')
-    
-else:
-    print('Test Question 3: Failed')
-    print(qs1 + " \"Does not match\" ")
-    
-# Tests for get_answers
-# Testing answers are the same
-
-ans1 = get_answer(0)
-ans2 = get_answer(1)
-
-# Answer 1
-if get_answer(0) == ans1:
-    print('Test Answer 1: Passed')
-else:
-    print('Test Answer 1: Failed')
-    print(ans1 + " \"Does not match\" ")
-
-# Answer 2
-if get_answer(1) == ans2:
-    print('Test Answer 2: Passed')
-else:
-    print('Test Answer 2: Failed')
-    print(ans2 + " \"Does not match\" ")
-    
-# Testing question is NOT the same
-# Answer3
-if get_answer(0) != ans2:
-    print('Test Answer 3: Passed')
-    
-else:
-    print('Test Answer 3: Failed')
-    print(ans3 + " \"Does match\" ")
-
+#Test for get scores
+assert get_scores() != [], "Score's should not be empty, Check scores.txt file"
+print ('All Assert tests have passed')

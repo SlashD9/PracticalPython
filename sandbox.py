@@ -21,6 +21,15 @@ def get_answer(ans):
             line_answer = line_answer.replace("\n", "")
             return (line_answer)
     f.close()
+    
+# This function gets the scores and returns them in a list
+def get_scores():
+    scores = list()
+    with open('./text/score.txt') as f:
+        for i in f:
+            scores.append(i.strip())
+        scores.sort(reverse=True)
+    return scores
 
 
 
