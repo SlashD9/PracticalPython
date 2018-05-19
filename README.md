@@ -30,6 +30,23 @@ me to test the functions outside the main run.py file.
 By seperating them I can confirm that on their own they are working before adding 
 them to the main run.py.
 
+test_sandbox.py file is where my tests are located here I have set up 6 assert 
+tests for both get_answer() and get_question() functions.
+
+Test Sequence is as follows:
+Check:
+1. First question/answer is in the file
+2. Last question/answer is in the file
+3. There are no other questions/answers in the file
+4. First question/answer matches
+5. Second question/answer does not matches
+6. Check a specific question/answer matches
+
+
+test_sandbox.py tests for get_scores() function
+This test checks to see if the file conatains any scores, file should always
+be reset to have one score remain in file.
+
 ### Python
 
 All Testing has been carried out in the same sequence:
