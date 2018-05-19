@@ -4,11 +4,11 @@
     <form method="POST">
         <h2>Lets Play, {{ username }}</h2>
         <p>{{ question }}</p>
-        <p id="answer" style="display:none;">{{ answer }}</p>
         <label for='username'>Please enter your answer...</label> <br><br>
         <input type="text" id='answer' name='answer'/><br><br>
-        <button type='submit' onclick="show_answer()">Submit</button>
+        <button type='submit' onclick="add_element_to_array()">Submit</button>
     </form>
+    <div id="Result"></div> 
 </div>
 
 {% endblock %}
