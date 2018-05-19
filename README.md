@@ -34,7 +34,7 @@ test_sandbox.py file is where my tests are located here I have set up 6 assert
 tests for both get_answer() and get_question() functions.
 
 Test Sequence is as follows:
-Check:
+* Check:
 1. First question/answer is in the file
 2. Last question/answer is in the file
 3. There are no other questions/answers in the file
@@ -47,17 +47,6 @@ test_sandbox.py tests for get_scores() function
 This test checks to see if the file conatains any scores, file should always
 be reset to have one score remain in file.
 
-### Python
-
-All Testing has been carried out in the same sequence:
-1. Add tests
-2. Run tests (They fail, no function)
-3. Create the function to enable tests to pass
-4. Run tests (They passed)
-5. Change the parameters of the tests to make them fail
-6. Run tests (They fail)
-7. Change the parameters to original
-8. Run tests (They passed)
 
 #### Sandbox
 1. Function 1: get_question()
@@ -65,6 +54,9 @@ All Testing has been carried out in the same sequence:
 
 2. Function 2: get_answer()
     * This function returns a line (answer) based on the number given as an argument to the function.
+
+3. Function 3: get_scores()
+    * This function reuturns a list of scores from the score.txt file.
 
 
 ### Run.py
