@@ -11,12 +11,13 @@ scores = list()
 w_guess = list()
 
 
-
+# Used for adding information to a specific filename
 def write_to_file(filename, data):
     """Handle the process of writing data to a file"""
     with open(filename, "a") as file:
         file.writelines(data)
 
+# Used to remove a specific file name e.g. "user"_gusses.txt
 def remove_file(filename):
     """Handle the process of writing data to a file"""
     os.remove(filename)
@@ -39,6 +40,7 @@ def get_answer(ans):
             return (line_answer)
     f.close()
 
+# Gets the list of guesses based on specific filename
 def get_guess(filename):
     w_guess = list()
     with open(filename) as f:
@@ -47,6 +49,7 @@ def get_guess(filename):
         w_guess.sort(reverse=True)
     return w_guess
     
+# Gets a list of scores to display on scores page.
 def get_scores():
     scores = list()
     with open('./text/score.txt') as f:
@@ -56,21 +59,23 @@ def get_scores():
     return scores
         
 
+# Home Page
 @app.route('/')
 def index():
     return render_template("/index.html")
 
-
+# About Page
 @app.route('/about')
 def about():
     return render_template("/about.html")
     
+# Scores Page
 @app.route('/score')
 def score():
     scores = get_scores()
     return render_template("/score.html", scores = scores)
 
-
+# Game Page - Enter your username
 @app.route('/game/', methods=['GET', 'POST'])
 def game():
     """Main page with instructions"""
@@ -81,7 +86,9 @@ def game():
         write_to_file("text/users.txt", request.form["username"].title() + "\n")
         return redirect(url_for("question", username = request.form["username"].title(), num = num, score = score ))
     return render_template("/game.html")
-    
+
+# Question Page - This cycles through the questions and asks for an answer
+# if the answer is incorrect it is shown in a list below the input field
 @app.route('/<username>/<num>/<score>', methods=['GET', 'POST'])
 def question(username, num, score):
     filename = "text/" + username + "_guesses.txt"
