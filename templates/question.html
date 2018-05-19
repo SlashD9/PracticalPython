@@ -8,7 +8,13 @@
         <input type="text" id='answer' name='answer'/><br><br>
         <button type='submit' onclick="add_element_to_array()">Submit</button>
     </form>
-    <div id="Result"></div> 
+    
+    <ul>
+        {% for guess in w_guess %}
+        
+            <li><p>Guess: {{ guess }}</p></li>
+        {% endfor %}
+    </ul>
 </div>
 
 {% endblock %}

@@ -8,7 +8,6 @@ line_question = ""
 ans = int
 line_answer = ""
 scores = list()
-w_guess = list()
 
 
 
@@ -17,10 +16,7 @@ def write_to_file(filename, data):
     with open(filename, "a") as file:
         file.writelines(data)
 
-def write_to_file_clear(filename, data):
-    """Handle the process of writing data to a file"""
-    with open(filename, "w") as file:
-        file.writelines(data)
+
 
 # This functions gets the question based on then paramenter provided
 def get_question(qs):
@@ -39,14 +35,6 @@ def get_answer(ans):
             line_answer = line_answer.replace("\n", "")
             return (line_answer)
     f.close()
-
-def get_guess():
-    w_guess = list()
-    with open('./text/guess.txt') as f:
-        for i in f:
-            w_guess.append(i.strip())
-        w_guess.sort(reverse=True)
-    return w_guess
     
 def get_scores():
     scores = list()
@@ -89,7 +77,6 @@ def question(username, num, score):
     question = get_question(number)
     answer = get_answer(number)
     score = int(score)
-    w_guess = get_guess()
         
     
     if request.method == 'POST':
@@ -98,20 +85,18 @@ def question(username, num, score):
         guess = guess.lower()
         
         if guess == answer:
-            write_to_file_clear("text/guess.txt", "")
             score = score + 10
             if number < 19:
                 number = number + 1
             else:
-                write_to_file_clear("text/guess.txt", "")
                 write_to_file("text/score.txt", str(score) + " Points  -  Username: " + username + "\n")
                 return redirect(url_for("score"))
         else:
             score = score - 3
             
-        return redirect(url_for("question", username = username, num = number, score = score, w_guess=w_guess))
+        return redirect(url_for("question", username = username, num = number, score = score))
     
-    return render_template("/question.html", username=username, question=question, answer=answer, w_guess=w_guess)
+    return render_template("/question.html", username=username, question=question, answer=answer)
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

@@ -7,6 +7,7 @@ function show_answer() {
 }
  */
 
+/*
 var x = 0;
 var array = Array();
 
@@ -27,3 +28,4 @@ function display_array() {
     }
     document.getElementById("Result").innerHTML = e;
 };
+*/
