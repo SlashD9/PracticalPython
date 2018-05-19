@@ -17,10 +17,9 @@ def write_to_file(filename, data):
     with open(filename, "a") as file:
         file.writelines(data)
 
-def write_to_file_clear(filename, data):
+def remove_file(filename):
     """Handle the process of writing data to a file"""
-    with open(filename, "w") as file:
-        file.writelines(data)
+    os.remove(filename)
 
 # This functions gets the question based on then paramenter provided
 def get_question(qs):
@@ -40,9 +39,9 @@ def get_answer(ans):
             return (line_answer)
     f.close()
 
-def get_guess():
+def get_guess(filename):
     w_guess = list()
-    with open('./text/guess.txt') as f:
+    with open(filename) as f:
         for i in f:
             w_guess.append(i.strip())
         w_guess.sort(reverse=True)
@@ -85,25 +84,28 @@ def game():
     
 @app.route('/<username>/<num>/<score>', methods=['GET', 'POST'])
 def question(username, num, score):
+    filename = "text/" + username + "_guesses.txt"
+    write_to_file(filename, '')
     number = int(num)
     question = get_question(number)
     answer = get_answer(number)
     score = int(score)
-    w_guess = get_guess()
+    w_guess = get_guess(filename)
         
     
     if request.method == 'POST':
-        write_to_file("text/guess.txt", request.form["answer"] + "\n")
+        write_to_file(filename, request.form["answer"] + "\n")
         guess = request.form["answer"]
         guess = guess.lower()
         
+        
         if guess == answer:
-            write_to_file_clear("text/guess.txt", "")
+            remove_file(filename)
             score = score + 10
             if number < 19:
                 number = number + 1
             else:
-                write_to_file_clear("text/guess.txt", "")
+                remove_file(filename)
                 write_to_file("text/score.txt", str(score) + " Points  -  Username: " + username + "\n")
                 return redirect(url_for("score"))
         else:
