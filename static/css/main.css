@@ -3,7 +3,7 @@ body{
 }    
 
 .main {
-    border-radius: 5px
+    border-radius: 5px;
     width: auto;
     margin-top: 2em;
     margin-left: auto;
@@ -12,7 +12,5 @@ body{
     background-color: rgba(0, 0, 0, 0.8);
     text-align: center;
 }
-
-
 
     

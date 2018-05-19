@@ -91,7 +91,7 @@ def game():
 # if the answer is incorrect it is shown in a list below the input field
 @app.route('/<username>/<num>/<score>', methods=['GET', 'POST'])
 def question(username, num, score):
-    filename = "text/" + username + "_guesses.txt"
+    filename = "./guesses/" + username + "_guesses.txt"
     write_to_file(filename, '')
     number = int(num)
     question = get_question(number)
