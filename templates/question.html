@@ -1,20 +1,34 @@
 {% extends 'base.html' %} {% block content %}
-<div class='main'>
-    <h1>Questions</h1>  
-    <form method="POST">
-        <h2>Lets Play, {{ username }}</h2>
-        <p>Points: {{ score }}</p>
+
+<h1>Questions</h1>  
+<form method="POST">
+    <h2>User: {{ username }}</h2>
+    <p>Points: {{ score }}</p>
+    <br>
+    <div id='question_box'>
         <p>{{ question }}</p>
-        <label for='username'>Please enter your answer...</label> <br><br>
-        <input type="text" id='answer' name='answer' autocomplete="off" /><br><br>
-        <button type='submit' onclick="add_element_to_array()">Submit</button>
-    </form>
+    </div>
+    <br>
+    <br>
+    {% if w_guess %}
+    <label for='username'>Please try again...</label> <br><br>
+    <input type="text" id='answer' name='answer' autocomplete="off" /><br><br>
+    <button type='submit' onclick="add_element_to_array()" style="background-color:red;">Check Again</button>
+    {% else %}
+    <label for='username'>Please enter your answer...</label> <br><br>
+    <input type="text" id='answer' name='answer' autocomplete="off" /><br><br>
+    <button type='submit' onclick="add_element_to_array()">Check Answer</button>
+    {% endif %}
     
-    <ul>
-        {% for guess in w_guess %}
-            <li><p>Guess{{ guess_num }}: {{ guess }}</p></li>
-        {% endfor %}
-    </ul>
-</div>
+</form>
+{% if w_guess %}
+<h2>Incorrect Guesses</h2>
+<ul>
+    {% for guess in w_guess %}
+        <li><p>Guess: {{ guess }}</p></li>
+    {% endfor %}
+</ul>
+
+{% endif %}
 
 {% endblock %}

@@ -117,9 +117,9 @@ def question(username, num, score):
         else:
             score = score - 3
             
-        return redirect(url_for("question", username = username, num = number, score = score))
+        return redirect(url_for("question", username = username, num = number, score = score, w_guess = w_guess))
     
-    return render_template("/question.html", username=username, question=question, answer=answer, score = score, w_guess = w_guess)
+    return render_template("/question.html", username=username, question=question, answer=answer, w_guess = w_guess, score = score)
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

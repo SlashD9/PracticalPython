@@ -3,8 +3,9 @@
 
 This is the IRiddle app.
 
-The Idea of the IRiddle game is to display riddles and ask the user to enter their guess as to the answer of the riddle.
+The Idea of the IRiddle game is to display riddles and ask the user to enter their guess, as to the answer of the riddle.
 The user will receive points for every question answered and the high scorers will be displayed on the scores page.
+Any incorrect guess will be shown below the page in a list.
 
 ## Wireframing
 This was created using the Adobe XD Program.
@@ -13,22 +14,23 @@ test the flow both on my MAC and on My IPhone.
 This will allow me to translate the exact mockup into HTML and CSS later in the build.
 
 ## Makeup
-The App consist of 4 major pages: 
+The App consist of 5 major pages: 
 
 * Home page (index.html)
 * About page (about.html)
 * Game page (game.html)
+* Question page (question.html)
 * Score page (scores.html)
 
 ## Questions and Answers
-Most of the riddles I have used in this app are from riddlers.org
+Most of the riddles I have used in this app are from riddlers.org, I have picked the top 20 riddles.
 
 ## Testing
 
 For creating functions I have decided to create a Sandbox.py file. This allows 
 me to test the functions outside the main run.py file.
 By seperating them I can confirm that on their own they are working before adding 
-them to the main run.py.
+them to the main run.py, where I will use manual testing to confirm they continue to work.
 
 test_sandbox.py file is where my tests are located here I have set up 6 assert 
 tests for both get_answer() and get_question() functions.

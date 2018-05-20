@@ -28,8 +28,9 @@
       </nav>
     </header>
     
-
-    {% block content %} {% endblock %}
+    <div class='main'>
+        {% block content %} {% endblock %}
+    </div>
     
     <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
