@@ -112,7 +112,6 @@ def question(username, num, score):
             if number < 19:
                 number = number + 1
             else:
-                remove_file(filename)
                 write_to_file("text/score.txt", str(score) + " Points  -  Username: " + username + "\n")
                 return redirect(url_for("score"))
         else:
