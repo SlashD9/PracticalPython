@@ -3,6 +3,9 @@
 
 This is the IRiddle app.
 
+App can be found at [iRiddle](http://iriddle.herokuapp.com/ "iRiddle")
+
+
 The Idea of the IRiddle game is to display riddles and ask the user to enter their guess, as to the answer of the riddle.
 The user will receive points for every question answered and the high scorers will be displayed on the scores page.
 Any incorrect guess will be shown below the page in a list.
