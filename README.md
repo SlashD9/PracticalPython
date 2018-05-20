@@ -27,7 +27,7 @@ Most of the riddles I have used in this app are from riddlers.org, I have picked
 
 ## Testing
 
-For creating functions I have decided to create a Sandbox.py file. This allows 
+For  the creation of functions I have decided to create a Sandbox.py file. This allows 
 me to test the functions outside the main run.py file.
 By seperating them I can confirm that on their own they are working before adding 
 them to the main run.py, where I will use manual testing to confirm they continue to work.
@@ -37,12 +37,12 @@ tests for both get_answer() and get_question() functions.
 
 Test Sequence is as follows:
 * Check:
-1. First question/answer is in the file
-2. Last question/answer is in the file
-3. There are no other questions/answers in the file
-4. First question/answer matches
-5. Second question/answer does not matches
-6. Check a specific question/answer matches
+    1. First question/answer is in the file
+    2. Last question/answer is in the file
+    3. There are no other questions/answers in the file
+    4. First question/answer matches
+    5. Second question/answer does not matches
+    6. Check a specific question/answer matches
 
 
 test_sandbox.py tests for get_scores() function
@@ -66,3 +66,35 @@ be reset to have one score remain in file.
 * I have made adjustments to the get_answer and get_question functions and then placed them back into the sandbox.py for testing
 * To allow the progression of the questions and the adding of the points I have added more arguments to the question route
 * This has been tested and all values increase as they should
+
+
+## Manual Tests
+### Home Page
+1. Check function of the menu buttons "HOME" & "ABOUT" - Working
+2. Check function of the "PLAY" button - Working
+3. Check function of the "LEARN MORE" button - Working
+
+
+### About Page
+1. Check function of the menu buttons "HOME" & "ABOUT" - Working
+
+
+### Game Page
+1. Check function of the menu buttons "HOME" & "ABOUT" - Working
+2. Check function of Username entry - Working
+
+### Question Page
+1. Check function of the menu buttons "HOME" & "ABOUT" - Working
+2. Check User: (Correct Name) - Working
+3. Check Points: (Correct Points) - Working
+4. Check correct Question - Working
+5. Check Label (Before first guess = "Please enter your answer...") - Working
+6. Check Input field - Working
+7. Check Button - Working
+8. Check incorrect answer Label (After first guess = "Please try again...") - Working
+9. Check incorrect answer Button (After first guess = "Check Again" with red background) - Working
+10. Check incorrect answer Text "Incorrect Guesses" shows after first guess - Working
+11. Check incorrect answer(s) shows in <li> - Working
+12. Check incorrect answer Points = -3 after first guess - Working
+13. Check Progresses to nect question and resets all for incorrect guess - Working
+14. Check Show Score page after all questions have been asked - Working
