@@ -1,9 +1,6 @@
 .main ul {
     list-style-type: none;
-}
-
-#answer {
-    font-size: 1.5em;
+    padding: 0px;
 }
 
 #question_box {
@@ -11,15 +8,4 @@
     padding: 1.5em;
     width: 70%;
     background-color: rgba(90, 90, 90, 0.8);
-}
-
-input {
-    text-align: center;
-}
-
-button {
-    background-color: green;
-    font-size: 1.2em;
-    padding: 10px 20px 10px 20px;
-    border-radius: 40px;
 }

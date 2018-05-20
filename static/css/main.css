@@ -1,7 +1,19 @@
 body{
     font-family: Verdana, sans-serif;
     background-color: black;
-}    
+}  
+
+input {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+button {
+    background-color: green;
+    font-size: 1.2em;
+    padding: 10px 20px 10px 20px;
+    border-radius: 40px;
+}
 
 .main {
     border-radius: 5px;
